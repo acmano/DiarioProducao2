@@ -49,12 +49,49 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Lorenzetti">
+      <HintPath>..\..\Lorenzetti\bin\Debug\Lorenzetti.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Comum\Coluna.cs" />
+    <Compile Include="Classes\Comum\DB.cs" />
+    <Compile Include="Classes\Comum\Tabela.cs" />
+    <Compile Include="Classes\Empresa\Classe.cs" />
+    <Compile Include="Classes\Empresa\Sql.Designer.cs" />
+    <Compile Include="Classes\Funcionario\Classe.cs" />
+    <Compile Include="Classes\Funcionario\Sql.Designer.cs" />
+    <Compile Include="Classes\Item\Classe.cs" />
+    <Compile Include="Classes\Item\Sql.Designer.cs" />
+    <Compile Include="Classes\LinhaMontagem\Classe.cs" />
+    <Compile Include="Classes\LinhaMontagem\Sql.Designer.cs" />
+    <Compile Include="Classes\PopUp\Linha\Adapter.cs" />
+    <Compile Include="Classes\PopUp\Linha\PopUp.cs" />
+    <Compile Include="Classes\PopUp\Linha\Sql.Designer.cs" />
+    <Compile Include="Classes\PopUp\Turno\Adapter.cs" />
+    <Compile Include="Classes\PopUp\Turno\PopUp.cs" />
+    <Compile Include="Classes\PopUp\Turno\Sql.Designer.cs" />
+    <Compile Include="Classes\Resources\BancoSQLDesenv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoSQLDesenv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Resources\BancoSQLProd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoSQLProd.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Tools\AcessoSQL.cs" />
+    <Compile Include="Classes\Tools\AlteraVersao.cs" />
+    <Compile Include="Classes\Tools\BancoSQL.cs" />
+    <Compile Include="Classes\Tools\Comum.cs" />
+    <Compile Include="Classes\Tools\ProgressDialogTask.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,7 +128,28 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2"/>
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\layout\popup.axml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Classes\Empresa\Sql.resx" />
+    <EmbeddedResource Include="Classes\Funcionario\Sql.resx" />
+    <EmbeddedResource Include="Classes\Item\Sql.resx" />
+    <EmbeddedResource Include="Classes\LinhaMontagem\Sql.resx" />
+    <EmbeddedResource Include="Classes\PopUp\Linha\Sql.resx" />
+    <EmbeddedResource Include="Classes\PopUp\Turno\Sql.resx" />
+    <EmbeddedResource Include="Classes\Resources\BancoSQLDesenv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BancoSQLDesenv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Resources\BancoSQLProd.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BancoSQLProd.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
