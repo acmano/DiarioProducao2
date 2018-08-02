@@ -23,7 +23,7 @@ namespace DiarioProducao
     )
   ]
 
-  public class ActProducao : Activity
+  public class Actproducao : Activity
   {
 
     private AcessoSql _acessoSql;
@@ -171,7 +171,7 @@ namespace DiarioProducao
     private void ListaProducaoItemClick(object sender, AdapterView.ItemClickEventArgs e)
     {
       var linhaSelecionada = _listaProducaoItem.ListaProducaoItemAdapter.GetItemAtPosition( e.Position );
-      _intent = new Intent( this, typeof( ActItem ) );
+      _intent = new Intent( this, typeof( Actitem ) );
       _intent.AddFlags( ActivityFlags.NewTask );
       _intent.AddFlags( ActivityFlags.NoAnimation );
       SetaParametros( ref _intent, linhaSelecionada );
