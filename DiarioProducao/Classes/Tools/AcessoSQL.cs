@@ -6,7 +6,7 @@ namespace DiarioProducao.Classes.Tools
 
   public class AcessoSql
   {
-    
+
     private readonly String _openQuery;
     private readonly String _server;
     private readonly String _userName;

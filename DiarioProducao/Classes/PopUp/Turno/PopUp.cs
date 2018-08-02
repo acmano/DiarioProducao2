@@ -31,13 +31,13 @@ namespace DiarioProducao.Classes.PopUp.Turno
       _acessoSql = acessoSql;
       _codEmpresa = codEmpresa;
     }
-    
+
     public void Exibe ( EditText descricao )
     {
       _aberto = true;
       var inflater = LayoutInflater.From ( _activityMestre );
-//aqui      var vwPopUp = inflater.Inflate ( Resource.Layout.PopUp, null );
-//aqui      _listViewDetalhe = vwPopUp.FindViewById<ListView> ( Resource.Id.lvwDetalhe );
+      var vwPopUp = inflater.Inflate ( Resource.Layout.popup, null );
+      _listViewDetalhe = vwPopUp.FindViewById<ListView> ( Resource.Id.lvwDetalhe );
       _listViewDetalhe.ItemClick += (sender, e) =>
       {
         var popUpDetalhe = _popUpAdapter.GetItemAtPosition(e.Position);
@@ -49,7 +49,7 @@ namespace DiarioProducao.Classes.PopUp.Turno
       ThreadingProcessar ( );
       var builder = new AlertDialog.Builder ( _activityMestre );
       builder.SetTitle ( Sql.TabDescription );
-//aqui      builder.SetView ( vwPopUp );
+      builder.SetView ( vwPopUp );
       builder.SetNegativeButton ( "Fechar", delegate
       {
         _aberto = false;

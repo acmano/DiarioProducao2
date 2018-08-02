@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using Android.App;
 using Android.Content;
-using Android.Content.PM;
 
 namespace DiarioProducao.Classes.Tools
 {
@@ -21,8 +20,8 @@ namespace DiarioProducao.Classes.Tools
 
     public static void TrocaVersao ( Activity context, string pProcesso, ref Boolean pAtualizaVersao )
     {
-      //Verifica se Existe Nova Versão da Aplicação            
-      var file = "/mnt/sdcard/.sistemas/apks/com.lorenzetti.mixprodutos-Signed.apk";
+      //Verifica se Existe Nova Versão da Aplicação
+      var file = @"/mnt/sdcard/.sistemas/apks/com.lorenzetti.mixprodutos-Signed.apk";
       const string fileMd5 = "/mnt/sdcard/.sistemas/apks/com.lorenzetti.mixprodutos-Signed.md5";
       var processo = "com.lorenzetti.mixprodutos";
       if ( !System.IO.File.Exists ( file ) )
@@ -36,16 +35,8 @@ namespace DiarioProducao.Classes.Tools
       }
       var md5Numero = "";
       var md5 = CalculateChecksum ( file );
-      if ( System.IO.File.Exists ( fileMd5 ) )
-      {
-        md5Numero = GetIniProperty ( fileMd5, "MD5" );
-      }
-      else
-      {
-        md5Numero = md5;
-      }
-      PackageManager pm;
-      pm = context.PackageManager;
+      md5Numero = File.Exists( fileMd5 ) ? GetIniProperty( fileMd5, "MD5" ) : md5;
+      var pm = context.PackageManager;
       var info = pm.GetApplicationInfo ( processo, 0 );
       var arq = info.SourceDir;
       var installed = new Java.IO.File ( arq ).LastModified ( );

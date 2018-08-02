@@ -6,7 +6,7 @@ using DiarioProducao.Classes.Tools;
 
 namespace DiarioProducao.Classes.PopUp.Linha
 {
-  
+
   public class PopUp
   {
 
@@ -32,8 +32,8 @@ namespace DiarioProducao.Classes.PopUp.Linha
     {
       Aberto = true;
       var inflater = LayoutInflater.From ( _activityMestre );
-//      var vwPopUp = inflater.Inflate ( Resource.Layout.popup, null );
-//      _listViewDetalhe = vwPopUp.FindViewById<ListView> ( Resource.Id.lvwDetalhe );
+      var vwPopUp = inflater.Inflate ( Resource.Layout.popup, null );
+      _listViewDetalhe = vwPopUp.FindViewById<ListView> ( Resource.Id.lvwDetalhe );
       _listViewDetalhe.ItemClick += (sender, e) =>
       {
         var popUpDetalhe = _popUpAdapter.GetItemAtPosition(e.Position);
@@ -45,7 +45,7 @@ namespace DiarioProducao.Classes.PopUp.Linha
       ThreadingProcessar ( );
       var builder = new AlertDialog.Builder ( _activityMestre );
       builder.SetTitle ( Sql.TabDescription );
-//aqui      builder.SetView ( vwPopUp );
+      builder.SetView ( vwPopUp );
       builder.SetNegativeButton ( "Fechar",    delegate
       {
         Aberto = false;
