@@ -2,8 +2,6 @@ using System;
 
 namespace DiarioProducao.Classes.Tools
 {
-  using Android.Content.Res;
-
   public class AcessoSql
   {
 
@@ -43,16 +41,16 @@ namespace DiarioProducao.Classes.Tools
       switch (acessoTipo)
       {
         case AcessoTipo.Desenvolvimento:
-          _openQuery = Classes.Resources.BancoSQLDesenv.OpenQuery;
-          _server = Classes.Resources.BancoSQLDesenv.Server;
-          _userName = Classes.Resources.BancoSQLDesenv.Username;
-          _password = Classes.Resources.BancoSQLDesenv.Password;
+          _openQuery = Resources.BancoSQLDesenv.OpenQuery;
+          _server = Resources.BancoSQLDesenv.Server;
+          _userName = Resources.BancoSQLDesenv.Username;
+          _password = Resources.BancoSQLDesenv.Password;
           break;
         case AcessoTipo.Producao:
-          _openQuery = Classes.Resources.BancoSQLProd.OpenQuery;
-          _server = Classes.Resources.BancoSQLProd.Server;
-          _userName = Classes.Resources.BancoSQLProd.Username;
-          _password = Classes.Resources.BancoSQLProd.Password;
+          _openQuery = Resources.BancoSQLProd.OpenQuery;
+          _server = Resources.BancoSQLProd.Server;
+          _userName = Resources.BancoSQLProd.Username;
+          _password = Resources.BancoSQLProd.Password;
           break;
         default:
           throw new Exception( "Unexpected Case" );

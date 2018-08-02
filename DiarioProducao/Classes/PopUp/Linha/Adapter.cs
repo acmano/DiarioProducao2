@@ -90,21 +90,20 @@ namespace DiarioProducao.Classes.PopUp.Linha
       var view = convertView;
       if ( convertView == null )
       {
-//aqui        view = ( _activityMestre.LayoutInflater.Inflate ( Resource.Layout.PopUpDetalhe, parent, false ) ) as LinearLayout;
+        view = ( _activityMestre.LayoutInflater.Inflate ( Resource.Layout.popupdetalhe, parent, false ) ) as LinearLayout;
       }
       if (view != null)
       {
-        //aqui
-        //var codigo = view.FindViewById ( Resource.Id.txtCodigoItem ) as TextView;
-        //var descricao = view.FindViewById ( Resource.Id.txtDescricaoItem ) as TextView;
-        //if (codigo != null)
-        //{
-        //  codigo.SetText(item.Codigo.Trim(), TextView.BufferType.Normal);
-        //}
-        //if (descricao != null)
-        //{
-        //  descricao.SetText(item.Descricao.Trim(), TextView.BufferType.Normal);
-        //}
+        var codigo = view.FindViewById( Resource.Id.txtCodigoItem ) as TextView;
+        var descricao = view.FindViewById( Resource.Id.txtDescricaoItem ) as TextView;
+        if (codigo != null)
+        {
+          codigo.SetText( item.Codigo.Trim(), TextView.BufferType.Normal );
+        }
+        if (descricao != null)
+        {
+          descricao.SetText( item.Descricao.Trim(), TextView.BufferType.Normal );
+        }
       }
       return view;
     }

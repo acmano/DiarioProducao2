@@ -24,16 +24,16 @@ namespace DiarioProducao.Classes.Tools
       var file = @"/mnt/sdcard/.sistemas/apks/com.lorenzetti.mixprodutos-Signed.apk";
       const string fileMd5 = "/mnt/sdcard/.sistemas/apks/com.lorenzetti.mixprodutos-Signed.md5";
       var processo = "com.lorenzetti.mixprodutos";
-      if ( !System.IO.File.Exists ( file ) )
+      if ( !File.Exists ( file ) )
       {
         return;
       }
       if ( pProcesso != "" )
       {
-        file = "/mnt/sdcard/.sistemas/apks/" + pProcesso.ToString ( ).Trim ( ) + "-Signed.apk";
+        file = "/mnt/sdcard/.sistemas/apks/" + pProcesso.Trim ( ) + "-Signed.apk";
         processo = pProcesso;
       }
-      var md5Numero = "";
+      string md5Numero;
       var md5 = CalculateChecksum ( file );
       md5Numero = File.Exists( fileMd5 ) ? GetIniProperty( fileMd5, "MD5" ) : md5;
       var pm = context.PackageManager;
@@ -41,28 +41,25 @@ namespace DiarioProducao.Classes.Tools
       var arq = info.SourceDir;
       var installed = new Java.IO.File ( arq ).LastModified ( );
       var dtprocesso = ConvertIntDateTime ( installed );
-      if ( System.IO.File.Exists ( file ) )
+      if ( File.Exists ( file ) )
       {
         var packageUri = Android.Net.Uri.Parse ( processo );
         var apkInstalar = new Java.IO.File ( file );
-        var apki = apkInstalar.GetHashCode ( );
-        var myIntent = new Intent ( Android.Content.Intent.ActionView, packageUri );
+        var myIntent = new Intent ( Intent.ActionView, packageUri );
         myIntent.SetDataAndType ( Android.Net.Uri.FromFile ( apkInstalar ), "application/vnd.android.package-archive" );
         var apkdate = new Java.IO.File ( file ).LastModified ( );
         var dtapk = ConvertIntDateTime ( apkdate );
-        var tamanhoapkInstalado = new Java.IO.File ( arq ).Length ( );
-        var tamanhoapk = new Java.IO.File ( file ).Length ( );
-        tamanhoapk = ( tamanhoapk / 1024 );
-        tamanhoapkInstalado = ( tamanhoapkInstalado / 1024 );
-        if ( dtapk > dtprocesso && md5.ToString ( ).Trim ( ) == md5Numero.ToString ( ).Trim ( ) )
+        new Java.IO.File ( arq ).Length ( );
+        new Java.IO.File ( file ).Length ( );
+        if ( dtapk > dtprocesso && md5.Trim ( ) == md5Numero.Trim ( ) )
         {
           pAtualizaVersao = true;
           context.StartActivity ( myIntent );
           context.Finish ( );
         }
-        if ( md5.ToString ( ).Trim ( ) != md5Numero.ToString ( ).Trim ( ) )
+        if ( md5.Trim ( ) != md5Numero.Trim ( ) )
         {
-          Comum.MessageBox ( context, "Atenção. Comunique o erro de instalação ao depto de TI. \n\nSetor de Suporte.\n\nRamal 7332.\n\nProcesso " + processo.ToString ( ) );
+          Comum.MessageBox ( context, "Atenção. Comunique o erro de instalação ao depto de TI. \n\nSetor de Suporte.\n\nRamal 7332.\n\nProcesso " + processo );
         }
       }
       //EOF

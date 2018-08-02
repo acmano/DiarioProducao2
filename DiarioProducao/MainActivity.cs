@@ -10,7 +10,7 @@ namespace DiarioProducao
       (
         Label = "@string/app_name"
       , Theme = "@style/AppTheme"
-      , MainLauncher = true
+      , MainLauncher = false
       )
   ]
   public class MainActivity : AppCompatActivity

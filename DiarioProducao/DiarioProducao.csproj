@@ -60,6 +60,9 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActDiario.cs" />
+    <Compile Include="ActItem.cs" />
+    <Compile Include="ActProducao.cs" />
     <Compile Include="Classes\Comum\Coluna.cs" />
     <Compile Include="Classes\Comum\DB.cs" />
     <Compile Include="Classes\Comum\Tabela.cs" />
@@ -77,6 +80,42 @@
     <Compile Include="Classes\PopUp\Turno\Adapter.cs" />
     <Compile Include="Classes\PopUp\Turno\PopUp.cs" />
     <Compile Include="Classes\PopUp\Turno\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoItemFim\Classe.cs" />
+    <Compile Include="Classes\ProducaoItemFim\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoItemFuncionario\Adapter.cs" />
+    <Compile Include="Classes\ProducaoItemFuncionario\Classe.cs" />
+    <Compile Include="Classes\ProducaoItemFuncionario\Lista.cs" />
+    <Compile Include="Classes\ProducaoItemFuncionario\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoItemInicio\Classe.cs" />
+    <Compile Include="Classes\ProducaoItemInicio\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoItemObservacao\Adapter.cs" />
+    <Compile Include="Classes\ProducaoItemObservacao\Classe.cs" />
+    <Compile Include="Classes\ProducaoItemObservacao\Lista.cs" />
+    <Compile Include="Classes\ProducaoItemObservacao\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoItemOcorrencia\Adapter.cs" />
+    <Compile Include="Classes\ProducaoItemOcorrencia\Classe.cs" />
+    <Compile Include="Classes\ProducaoItemOcorrencia\Lista.cs" />
+    <Compile Include="Classes\ProducaoItemOcorrencia\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoItemQuantidade\Classe.cs" />
+    <Compile Include="Classes\ProducaoItemQuantidade\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoItem\Adapter.cs" />
+    <Compile Include="Classes\ProducaoItem\Classe.cs" />
+    <Compile Include="Classes\ProducaoItem\Lista.cs" />
+    <Compile Include="Classes\ProducaoItem\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoObservacao\Adapter.cs" />
+    <Compile Include="Classes\ProducaoObservacao\Classe.cs" />
+    <Compile Include="Classes\ProducaoObservacao\Lista.cs" />
+    <Compile Include="Classes\ProducaoObservacao\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoOcorrencia\Adapter.cs" />
+    <Compile Include="Classes\ProducaoOcorrencia\Classe.cs" />
+    <Compile Include="Classes\ProducaoOcorrencia\Lista.cs" />
+    <Compile Include="Classes\ProducaoOcorrencia\Sql.Designer.cs" />
+    <Compile Include="Classes\ProducaoResponsavel\Classe.cs" />
+    <Compile Include="Classes\ProducaoResponsavel\Sql.Designer.cs" />
+    <Compile Include="Classes\Producao\Adapter.cs" />
+    <Compile Include="Classes\Producao\Classe.cs" />
+    <Compile Include="Classes\Producao\Lista.cs" />
+    <Compile Include="Classes\Producao\Sql.Designer.cs" />
     <Compile Include="Classes\Resources\BancoSQLDesenv.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +131,10 @@
     <Compile Include="Classes\Tools\BancoSQL.cs" />
     <Compile Include="Classes\Tools\Comum.cs" />
     <Compile Include="Classes\Tools\ProgressDialogTask.cs" />
+    <Compile Include="Classes\TurnoTipo\Classe.cs" />
+    <Compile Include="Classes\TurnoTipo\Sql.Designer.cs" />
+    <Compile Include="Classes\Turno\Classe.cs" />
+    <Compile Include="Classes\Turno\Sql.Designer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,6 +185,17 @@
     <EmbeddedResource Include="Classes\LinhaMontagem\Sql.resx" />
     <EmbeddedResource Include="Classes\PopUp\Linha\Sql.resx" />
     <EmbeddedResource Include="Classes\PopUp\Turno\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoItemFim\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoItemFuncionario\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoItemInicio\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoItemObservacao\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoItemOcorrencia\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoItemQuantidade\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoItem\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoObservacao\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoOcorrencia\Sql.resx" />
+    <EmbeddedResource Include="Classes\ProducaoResponsavel\Sql.resx" />
+    <EmbeddedResource Include="Classes\Producao\Sql.resx" />
     <EmbeddedResource Include="Classes\Resources\BancoSQLDesenv.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BancoSQLDesenv.Designer.cs</LastGenOutput>
@@ -150,6 +204,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BancoSQLProd.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Classes\TurnoTipo\Sql.resx" />
+    <EmbeddedResource Include="Classes\Turno\Sql.resx" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\diario.axml">
